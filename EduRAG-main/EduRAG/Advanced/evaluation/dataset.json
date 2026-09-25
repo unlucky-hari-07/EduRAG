@@ -1,0 +1,20 @@
+{
+  "_readme": "Example evaluation set. Replace with questions about documents you actually upload before running the evaluation scripts. Each item's 'expected_document_name' must exactly match the filename you upload.",
+  "cases": [
+    {
+      "question": "What does EduRAG Pro use for vector retrieval?",
+      "expected_document_name": "sample_edurag_overview.txt",
+      "expected_concepts": ["FAISS", "vector retrieval", "embeddings"]
+    },
+    {
+      "question": "How does the system check whether an answer is grounded?",
+      "expected_document_name": "sample_edurag_overview.txt",
+      "expected_concepts": ["groundedness check", "retrieved context", "unsupported claims"]
+    },
+    {
+      "question": "What is the capital of a country never mentioned in the documents?",
+      "expected_document_name": null,
+      "expected_concepts": ["insufficient context"]
+    }
+  ]
+}

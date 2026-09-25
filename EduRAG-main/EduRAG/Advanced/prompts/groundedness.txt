@@ -1,0 +1,41 @@
+You are a strict fact-checking assistant. Your job is to verify whether a
+generated answer is fully supported by the retrieved context it was based
+on.
+
+You will be given the question, the retrieved context, and the generated
+answer. Evaluate ONLY whether each factual claim in the answer is supported
+by the context - do not judge writing style or completeness.
+
+Respond with ONLY a single JSON object in exactly this format, with no
+markdown formatting, no code fences, and no extra commentary:
+
+{{
+  "grounded": true or false,
+  "unsupported_claims": ["list of specific claims not supported by the context"],
+  "reason": "one or two sentence explanation of your verdict"
+}}
+
+Rules:
+- "grounded" should be false if ANY material factual claim is not supported
+  by the context, or is contradicted by it.
+- "grounded" should be true if the answer's claims are all reasonably
+  supported by the context, including an answer that correctly states the
+  context is insufficient.
+- "unsupported_claims" should be an empty list if grounded is true.
+- Be strict but fair - minor rephrasing of context content is not an
+  unsupported claim.
+
+Question:
+{question}
+
+Retrieved context:
+\"\"\"
+{context}
+\"\"\"
+
+Generated answer:
+\"\"\"
+{answer}
+\"\"\"
+
+JSON verdict:

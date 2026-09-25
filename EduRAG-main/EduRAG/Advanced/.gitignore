@@ -1,0 +1,16 @@
+.env
+venv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+
+# Runtime data: uploaded files, FAISS index, and document registry should
+# not be committed - they're generated at runtime and are environment-specific.
+data/uploads/*
+!data/uploads/.gitkeep
+data/faiss_index/*
+!data/faiss_index/.gitkeep
+data/documents.json
+
+.pytest_cache/
+*.egg-info/
